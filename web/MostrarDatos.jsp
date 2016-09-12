@@ -5,12 +5,6 @@
     Author     : Usuario
 --%>
 
-<%
-
-
-%>
-
-
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,11 +15,11 @@
     </head>
     <body>
         <h1>Todas las personas</h1>
-    <c:forEach var="listaPersonas" items="${session.scope.persona}">
-        Nombre: ${listaPersonas.nombre} <br>
-        Edad: ${listaPersonas.edad} <br>
-        <br>
-        <hr>
-    </c:forEach>    
+        <c:forEach var="a" items="${sessionScope.persona}">
+            Id : ${a.id} <br>
+            Nombre: ${a.nombre} <br>
+            Edad: ${a.edad} <br>
+            <hr>
+        </c:forEach>
     </body>
 </html>
