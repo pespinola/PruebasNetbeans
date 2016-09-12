@@ -30,6 +30,7 @@ public class RegistrarPersonaServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        String id = request.getParameter("txtId");
         String nombre = request.getParameter("txtNombre");
         String edad = request.getParameter("txtEdad");
         
@@ -41,6 +42,7 @@ public class RegistrarPersonaServlet extends HttpServlet {
         
         PersonaControlador perControlador = new PersonaControlador();
         Persona per = new Persona();
+        per.setId(Integer.parseInt(id));
         per.setNombre(nombre);
         per.setEdad(Integer.parseInt(edad));
         
@@ -53,10 +55,6 @@ public class RegistrarPersonaServlet extends HttpServlet {
             request.getSession().setAttribute("error", error);
             request.getRequestDispatcher("error.jsp").forward(request, response);
         }
-        
-       
-        
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
