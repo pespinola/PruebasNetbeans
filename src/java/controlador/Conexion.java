@@ -7,6 +7,7 @@ package controlador;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,6 +19,7 @@ public class Conexion {
     
     
     private Connection con;
+    protected Statement st;
     
     public Conexion() {
         
@@ -28,6 +30,7 @@ public class Conexion {
           Class.forName("org.postgresql.Driver");
           con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ejemplo", "postgres","admin");
           System.out.println("Exitosa conexion");
+          st = con.createStatement();
           return con;
        }catch(Exception e){
            System.out.println("Problemas al conectar "+e.getMessage());
@@ -43,7 +46,10 @@ public class Conexion {
         }
         return con;
     }
-            
+    
+    public Statement getStatement(){
+        return st;
+    }
             
     
 }
