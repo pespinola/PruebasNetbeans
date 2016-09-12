@@ -10,25 +10,31 @@ package modelo;
  * @author Usuario
  */
 public class Persona {
-    private int idPersona;
+    private int id;
     private String nombre;
     private int edad;
 
     public Persona() {
     }
 
-    public Persona(int idPersona, String nombre, int edad) {
-        this.idPersona = idPersona;
+    public Persona(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
     }
 
-    public int getIdPersona() {
-        return idPersona;
+    
+    public Persona(int id, String nombre, int edad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.edad = edad;
     }
 
-    public void setIdPersona(int idPersona) {
-        this.idPersona = idPersona;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -46,5 +52,6 @@ public class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-   
+
+    
 }
