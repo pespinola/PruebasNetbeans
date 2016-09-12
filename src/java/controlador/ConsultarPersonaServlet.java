@@ -35,9 +35,7 @@ public class ConsultarPersonaServlet extends HttpServlet {
             throws ServletException, IOException {
         
         PersonaControlador p = new PersonaControlador();
-        ArrayList <Persona> listaPersona = new ArrayList<Persona>();
-        listaPersona= p.consultar();
-        
+        ArrayList <Persona> listaPersona = p.consultar();
         request.getSession().setAttribute("persona", listaPersona);
         request.getRequestDispatcher("MostrarDatos.jsp").forward(request, response);
         
